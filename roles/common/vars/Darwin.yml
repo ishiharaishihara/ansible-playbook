@@ -1,0 +1,9 @@
+---
+brew_taps:
+  - homebrew/core
+  - homebrew/cask
+brew_cask_apps:
+    - iterm2
+brew_packages:
+    - git
+    - jq
