@@ -1,0 +1,13 @@
+language: python
+
+os: osx
+
+install:
+  - pip intsll ansible
+
+before_script:
+  - ansible --version
+
+script:
+  - ansible-playbook --syntax-check ./main.yml -i ./inventory
+  - ansible-playbook ./main.yml -i ./inventory
