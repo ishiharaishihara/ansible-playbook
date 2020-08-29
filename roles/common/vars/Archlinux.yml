@@ -1,4 +1,4 @@
 ---
 pacman_packages:
-    - git
-    - jq
+  - git
+  - jq

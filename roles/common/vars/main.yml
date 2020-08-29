@@ -1,4 +1,2 @@
 ---
-- name: Variable for each OS
-  include_vars:
-    file: "{{ ansible_os_family }}.yml"
+include_vars: "{{ ansible_os_family }}.yml"
