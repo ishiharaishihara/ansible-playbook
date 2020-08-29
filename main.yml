@@ -5,4 +5,3 @@
   tasks:
     - import_role:
         name: common
-        public: yes
