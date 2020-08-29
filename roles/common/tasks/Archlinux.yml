@@ -1,0 +1,4 @@
+---
+- name: Pacman -Syu
+    pacman:
+      name: "{{ pacman_packages }}"
