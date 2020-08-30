@@ -2,11 +2,6 @@
 - include_vars: "{{ ansible_os_family }}.yml"
 - include_tasks: "{{ ansible_os_family }}.yml"
 
-- name: set env
-  shell: |
-    export GOPATH=$HOME/go
-    export PATH=$PATH:$GOPATH/bin
-
 - name: go get
   shell: go get {{ item }}
   with_items: "{{ go_packages }}"

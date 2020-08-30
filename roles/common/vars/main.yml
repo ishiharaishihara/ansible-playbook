@@ -1,2 +1,2 @@
 go_packages:
-  - ghq
+  - github.com/x-motemen/ghq
