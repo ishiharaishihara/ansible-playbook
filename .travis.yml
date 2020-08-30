@@ -10,12 +10,12 @@ archlinux:
   mount:
     - ~/.pkg-cache:/var/cache/pacman/pkg
   script:
-    - "uname -a"
-    - "pwd"
-    - "ls -al"
+    - pip install ansible
+    - ansible --version
+    - ansible --version
+    - ansible-playbook --syntax-check ./main.yml -i ./inventory
+    - ansible-playbook ./main.yml -i ./inventory
 
 script:
   - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
-  - "uname -a"
-  - "pwd"
-  - "ls -al"
+
