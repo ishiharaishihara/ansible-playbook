@@ -11,13 +11,13 @@ archlinux:
     - ~/.pkg-cache:/var/cache/pacman/pkg
   before_install:
     - "sudo ln -s /dev/null /etc/pacman.d/hooks/package-cleanup.hook"
-
-install:
-  - pip install ansible
-
-before_script:
-  - ansible --version
+  script:
+    - "uname -a"
+    - "pwd"
+    - "ls -al"
 
 script:
-  - ansible-playbook --syntax-check ./main.yml -i ./inventory
-  - ansible-playbook ./main.yml -i ./inventory
+  - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
+  - "uname -a"
+  - "pwd"
+  - "ls -al"
