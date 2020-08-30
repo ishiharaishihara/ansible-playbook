@@ -7,23 +7,23 @@ jobs:
         - docker
       script:
         curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash
-      archlinux:
-        packages:
-          - python-pip
-        mount:
-          - ~/.pkg-cache:/var/cache/pacman/pkg
-        before_install:
-          - PATH="$PATH:$HOME/.local/bin"
-        script:
-          - pacman --version
-          - pip install ansible
-          - bash ./test/test.sh
     - os: osx
       osx_image: xcode11.3
       install:
         pip install ansible
       script:
         bash ./test/test.sh
+archlinux:
+    packages:
+        - python-pip
+    mount:
+        - ~/.pkg-cache:/var/cache/pacman/pkg
+    before_install:
+        - PATH="$PATH:$HOME/.local/bin"
+    script:
+        - pacman --version
+        - pip install ansible
+        - bash ./test/test.sh
 
 
 
