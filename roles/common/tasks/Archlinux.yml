@@ -1,4 +1,5 @@
 ---
 - name: Pacman -Syu
+  become: true
   pacman:
     name: "{{ pacman_packages }}"
