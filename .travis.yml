@@ -12,10 +12,9 @@ archlinux:
   script:
     - pacman --version
     - pip install ansible
-    - pip show -f ansible
-    - /bin/ansible --version
-    - /bin/ansible-playbook --syntax-check ./main.yml -i ./inventory
-    - /bin/ansible-playbook ./main.yml -i ./inventory
+    - .local/bin/ansible --version
+    - .local/bin/ansible-playbook --syntax-check ./main.yml -i ./inventory
+    - .local/bin/ansible-playbook ./main.yml -i ./inventory
 
 script:
   - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
