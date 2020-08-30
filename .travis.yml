@@ -6,12 +6,12 @@ services:
   - docker
 archlinux:
   packages:
-    - python
+    - python-pip
   mount:
     - ~/.pkg-cache:/var/cache/pacman/pkg
   script:
+    - pacman --version
     - pip install ansible
-    - ansible --version
     - ansible --version
     - ansible-playbook --syntax-check ./main.yml -i ./inventory
     - ansible-playbook ./main.yml -i ./inventory
