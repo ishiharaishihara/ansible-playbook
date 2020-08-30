@@ -1,3 +1,9 @@
 ---
 - include_vars: "{{ ansible_os_family }}.yml"
 - include_tasks: "{{ ansible_os_family }}.yml"
+
+- name: go get
+  shell: 
+    cmd: "go get {{ item }}"
+  with_items: "{{ go_packages }}"
+

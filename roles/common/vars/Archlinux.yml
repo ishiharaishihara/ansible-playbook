@@ -6,3 +6,4 @@ pacman_packages:
   - zsh
   - docker
   - docker-compose
+  - go

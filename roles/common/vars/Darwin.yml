@@ -12,3 +12,4 @@ brew_packages:
   - zsh
   - docker
   - hub
+  - go
