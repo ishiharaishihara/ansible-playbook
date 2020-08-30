@@ -13,7 +13,7 @@ archlinux:
     - pacman --version
     - pip install ansible
     - which pip
-    - php show -f ansible | grep bin
+    - pip show -f ansible | grep bin
     - ansible --version
     - ansible-playbook --syntax-check ./main.yml -i ./inventory
     - ansible-playbook ./main.yml -i ./inventory
