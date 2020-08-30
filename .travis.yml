@@ -6,6 +6,12 @@ jobs:
   - os: osx
     osx_image: xcode11.3
 
+install:
+    - |
+      if [ ! "${BUILD_IMAGE-}" = archlinux ]; then
+        pip install ansible
+      fi
+
 services:
   - docker
 

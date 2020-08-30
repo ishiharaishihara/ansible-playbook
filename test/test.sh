@@ -1,6 +1,6 @@
 #/bin/bash -eu
 
-cd $(dirname $0)
+cd ${0%/*}
 ansible --version
-ansible ansible-playbook --sintax-check ../main.yml -i ../inventory
-ansible ansible-playbook ../main.yml -i ../inventory
+ansible-playbook --syntax-check ../main.yml -i ../inventory
+ansible-playbook ../main.yml -i ../inventory
