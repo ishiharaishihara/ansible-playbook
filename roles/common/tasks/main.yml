@@ -6,6 +6,5 @@
   shell: GOPATH=$HOME/go
 
 - name: go get
-  shell: go get {{ item }}"
+  shell: go get {{ item }}
   with_items: "{{ go_packages }}"
-
