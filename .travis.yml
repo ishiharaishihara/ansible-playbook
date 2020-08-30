@@ -22,7 +22,8 @@ archlinux:
     - bash ./test/test.sh
 
 script:
-    - if [ "${BUILD_IMAGE-}" = archlinux ]; then 
+    - |
+      if [ "${BUILD_IMAGE-}" = archlinux ]; then 
         curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash
       else
         bash ./test/test.sh
