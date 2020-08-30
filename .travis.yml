@@ -2,36 +2,30 @@ language: minimal
 
 jobs:
   - os: linux
-    env: BUILD_IMAGE=archlinux
+    services:
+      - docker
+    script:
+      curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash
+    archlinux:
+      packages:
+        - python-pip
+      mount:
+        - ~/.pkg-cache:/var/cache/pacman/pkg
+      before_install:
+          - PATH="$PATH:$HOME/.local/bin"
+      script:
+        - pacman --version
+        - pip install ansible
+        - bash ./test/test.sh
+
   - os: osx
     osx_image: xcode11.3
+    install:
+      pip install ansible
+    script:
+      bash ./test/test.sh
 
-install:
-    - |
-      if [ ! "${BUILD_IMAGE-}" = archlinux ]; then
-        pip install ansible
-      fi
 
-services:
-  - docker
 
-archlinux:
-  packages:
-    - python-pip
-  mount:
-    - ~/.pkg-cache:/var/cache/pacman/pkg
-  before_install:
-      - PATH="$PATH:$HOME/.local/bin"
-  script:
-    - pacman --version
-    - pip install ansible
-    - bash ./test/test.sh
 
-script:
-    - |
-      if [ "${BUILD_IMAGE-}" = archlinux ]; then 
-        curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash
-      else
-        bash ./test/test.sh
-      fi
 
