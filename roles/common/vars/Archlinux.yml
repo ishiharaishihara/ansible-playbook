@@ -2,3 +2,7 @@
 pacman_packages:
   - git
   - jq
+  - neovim
+  - zsh
+  - docker
+  - docker-compose

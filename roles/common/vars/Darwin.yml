@@ -4,6 +4,11 @@ brew_taps:
   - homebrew/cask
 brew_cask_apps:
   - iterm2
+  - docker
 brew_packages:
   - git
   - jq
+  - neovim
+  - zsh
+  - docker
+  - hub
