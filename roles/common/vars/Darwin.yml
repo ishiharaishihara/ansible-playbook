@@ -13,3 +13,5 @@ brew_packages:
   - docker
   - hub
   - go
+  - lsd
+  - bat

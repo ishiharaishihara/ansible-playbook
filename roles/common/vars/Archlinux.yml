@@ -7,3 +7,5 @@ pacman_packages:
   - docker
   - docker-compose
   - go
+  - lsd
+  - bat
